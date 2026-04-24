@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="トレーニング">
+  <title>トレーニング管理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <main id="content">
+      <section id="tab-today"   class="tab-pane active"></section>
+      <section id="tab-week"    class="tab-pane"></section>
+      <section id="tab-records" class="tab-pane"></section>
+      <section id="tab-race"    class="tab-pane"></section>
+    </main>
+
+    <nav id="tabbar">
+      <button class="tab-btn active" onclick="switchTab('today',this)">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+        <span>今日</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('week',this)">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" fill="currentColor"/></svg>
+        <span>今週</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('records',this)">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"/></svg>
+        <span>記録</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('race',this)">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z" fill="currentColor"/></svg>
+        <span>レース</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
