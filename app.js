@@ -251,8 +251,7 @@ function switchRec(tab) {
 
 function renderRace() {
   const cards = D.races.map(r => {
-    const days = daysUntil(r.date);
-    const past = days < 0;
+    const past = !r.tbd && daysUntil(r.date) < 0;
 
     const mainBadge = r.isMain
       ? '<span class="race-main-badge">🎯 メインレース</span>' : '';
@@ -260,12 +259,22 @@ function renderRace() {
     const cls = ['card','race-card', r.isMain ? 'race-main' : '', past ? 'race-past' : '']
       .filter(Boolean).join(' ');
 
-    const countdown = past
-      ? `<div class="race-ended">終了</div>`
-      : `<div class="race-countdown">
+    let countdown;
+    if (r.tbd) {
+      countdown = `<div class="race-ended">日程未定</div>`;
+    } else if (past) {
+      countdown = `<div class="race-ended">終了</div>`;
+    } else {
+      const days = daysUntil(r.date);
+      countdown = `<div class="race-countdown">
            <span class="days-num">${days}</span>
            <span class="days-label">日後</span>
          </div>`;
+    }
+
+    const dateLabel = r.tbd
+      ? `<div class="race-date">日程未定</div>`
+      : `<div class="race-date">${raceDate(r.date)}</div>`;
 
     const result = r.result
       ? `<div class="race-result">記録：${esc(r.result)}</div>` : '';
@@ -275,7 +284,7 @@ function renderRace() {
         ${mainBadge}
         <div class="race-name">${esc(r.name)}</div>
         <span class="race-distance-badge">${esc(r.distance)}</span>
-        <div class="race-date">${raceDate(r.date)}</div>
+        ${dateLabel}
         <div class="race-type">${esc(r.type)}</div>
         ${countdown}
         ${result}

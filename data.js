@@ -53,32 +53,32 @@ window.trainingData = {
     {
       name:     "加賀温泉郷寛平ナイトマラソン",
       distance: "32km",
-      date:     "2026-09-13",
+      tbd:      true,
       type:     "ファンラン"
     },
     {
       name:     "新潟シティマラソン",
       distance: "フル",
-      date:     "2026-10-12",
+      date:     "2026-10-11",
       type:     "🎯 メイン・サブ4.5",
       isMain:   true
     },
     {
       name:     "金沢マラソン",
       distance: "フル",
-      date:     "2026-10-26",
+      date:     "2026-10-25",
       type:     "サブ4.5チャレンジ"
     },
     {
       name:     "NAHAマラソン",
       distance: "フル",
-      date:     "2026-12-07",
+      tbd:      true,
       type:     "ファンラン"
     },
     {
       name:     "ふくい桜マラソン",
       distance: "フル",
-      date:     "2027-03-23",
+      tbd:      true,
       type:     "リベンジ・サブ4.5"
     }
   ],
