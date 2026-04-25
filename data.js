@@ -12,7 +12,13 @@ window.trainingData = {
   todayMenu: {
     date:  "2026-04-26",
     menu:  "朝ジョグ＋筋トレ（仕事）",
-    sub:   "✅ 完了：5km　ペース6:53　心拍130/144　負荷61"
+    sub:   "✅ 完了：5km　ペース6:53　心拍130/144　負荷61",
+    training: [
+      "プランク　30秒 × ２セット",
+      "バードドッグ（左右）　各10回 × ２セット",
+      "腕立て伏せ　10〜15回 × ２セット",
+      "カーフレイズ　20回 × ２セット"
+    ]
   },
 
   // ─────────────────────────────────────────
@@ -30,7 +36,7 @@ window.trainingData = {
     { date:"4/25", fullDate:"2026-04-25", day:"土", done:true,  menu:"軽いジョグ 30〜40分（キロ7分以上）",            actual:"8.5km　ペース6:58　心拍122/128　負荷68" },
     { date:"4/26", fullDate:"2026-04-26", day:"日", done:true,  menu:"朝ジョグ＋筋トレ",                              actual:"5km　ペース6:53　心拍130/144　負荷61", note:"仕事" },
     // ── 来週 4/27(月) 〜 5/3(日) ──
-    { date:"4/27", fullDate:"2026-04-27", day:"月", done:false, menu:"ジョグ7km（キロ7分）＋筋トレ",                  actual:"" },
+    { date:"4/27", fullDate:"2026-04-27", day:"月", done:false, menu:"🏸 バドミントン",                               actual:"" },
     { date:"4/28", fullDate:"2026-04-28", day:"火", done:false, menu:"🏸 バドミントン",                               actual:"" },
     { date:"4/29", fullDate:"2026-04-29", day:"水", done:false, menu:"ジョグ7km＋流し100m×3本",                      actual:"" },
     { date:"4/30", fullDate:"2026-04-30", day:"木", done:false, menu:"🏸 バドミントン",                               actual:"" },

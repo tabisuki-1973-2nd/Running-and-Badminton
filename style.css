@@ -153,6 +153,14 @@ html, body {
   line-height: 1.55;
 }
 
+.training-list {
+  margin: 6px 0 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.8;
+}
+
 /* ===== Week Schedule ===== */
 .week-section {
   margin: 0 16px 20px;

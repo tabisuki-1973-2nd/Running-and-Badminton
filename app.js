@@ -62,6 +62,10 @@ function renderToday() {
   const subHtml = m.sub
     ? `<div class="menu-sub">${esc(m.sub).replace(/\n/g,'<br>')}</div>` : '';
 
+  const trainingHtml = (m.training && m.training.length)
+    ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
+       <ul class="training-list">${m.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
+
   document.getElementById('tab-today').innerHTML = `
     <div class="page-header">
       <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
@@ -71,6 +75,7 @@ function renderToday() {
       <div class="card-label">今日のメニュー</div>
       <div class="menu-main">${esc(m.menu)}</div>
       ${subHtml}
+      ${trainingHtml}
       ${stale}
     </div>
 
