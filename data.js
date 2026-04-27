@@ -34,7 +34,7 @@ window.trainingData = {
     { date:"4/23", fullDate:"2026-04-23", day:"木", done:true,  menu:"3km計測＋🏸バドミントン",                       actual:"計測13:13　／　心拍107/144　負荷37" },
     { date:"4/24", fullDate:"2026-04-24", day:"金", done:true,  menu:"休養＋筋トレ",                                  actual:"筋トレ2セット（筋肉痛のため）" },
     { date:"4/25", fullDate:"2026-04-25", day:"土", done:true,  menu:"軽いジョグ 30〜40分（キロ7分以上）",            actual:"8.5km　ペース6:58　心拍122/128　負荷68" },
-    { date:"4/26", fullDate:"2026-04-26", day:"日", done:true,  menu:"朝ジョグ＋筋トレ",                              actual:"5km　ペース6:53　心拍130/144　負荷61", note:"仕事" },
+    { date:"4/26", fullDate:"2026-04-26", day:"日", done:true,  menu:"朝ジョグ＋筋トレ",                              actual:"5km　ペース6:53　心拍130/144　負荷61　／　筋トレ全メニュー完了", note:"仕事" },
     // ── 来週 4/27(月) 〜 5/3(日) ──
     { date:"4/27", fullDate:"2026-04-27", day:"月", done:false, menu:"🏸 バドミントン",                               actual:"" },
     { date:"4/28", fullDate:"2026-04-28", day:"火", done:false, menu:"🏸 バドミントン",                               actual:"" },
