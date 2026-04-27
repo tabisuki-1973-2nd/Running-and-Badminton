@@ -158,9 +158,9 @@ function badCard(b, title) {
 
   const rows = [
     row('時間', b.duration),
-    !isLecture ? row('心拍 平均/最大', b.heartRate) : '',
-    (b.aerobic != null && !isLecture) ? row('有酸素/無酸素', `${b.aerobic}/${b.anaerobic}`) : '',
-    (b.load != null && !isLecture) ? row('運動負荷', b.load) : ''
+    b.heartRate ? row('心拍 平均/最大', b.heartRate) : '',
+    (b.aerobic != null) ? row('有酸素/無酸素', `${b.aerobic}/${b.anaerobic}`) : '',
+    (b.load != null) ? row('運動負荷', b.load) : ''
   ].filter(Boolean).join('');
 
   const memo = b.memo
