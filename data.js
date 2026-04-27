@@ -11,8 +11,8 @@ window.trainingData = {
   // ─────────────────────────────────────────
   todayMenu: {
     date:  "2026-04-27",
-    menu:  "🏸 バドミントン",
-    sub:   ""
+    menu:  "🏸 バドミントン講習会",
+    sub:   "✅ 完了：1時間50分　心拍98/151　負荷37"
   },
 
   // ─────────────────────────────────────────
@@ -30,7 +30,7 @@ window.trainingData = {
     { date:"4/25", fullDate:"2026-04-25", day:"土", done:true,  menu:"軽いジョグ 30〜40分（キロ7分以上）",            actual:"8.5km　ペース6:58　心拍122/128　負荷68" },
     { date:"4/26", fullDate:"2026-04-26", day:"日", done:true,  menu:"朝ジョグ＋筋トレ",                              actual:"5km　ペース6:53　心拍130/144　負荷61　／　筋トレ全メニュー完了", note:"仕事" },
     // ── 来週 4/27(月) 〜 5/3(日) ──
-    { date:"4/27", fullDate:"2026-04-27", day:"月", done:false, menu:"🏸 バドミントン",                               actual:"" },
+    { date:"4/27", fullDate:"2026-04-27", day:"月", done:true,  menu:"🏸 バドミントン講習会",                          actual:"1時間50分　心拍98/151　負荷37" },
     { date:"4/28", fullDate:"2026-04-28", day:"火", done:false, menu:"🏸 バドミントン",                               actual:"" },
     { date:"4/29", fullDate:"2026-04-29", day:"水", done:false, menu:"ジョグ7km＋流し100m×3本",                      actual:"" },
     { date:"4/30", fullDate:"2026-04-30", day:"木", done:false, menu:"🏸 バドミントン",                               actual:"" },
@@ -247,6 +247,15 @@ window.trainingData = {
   // バドミントンログ（新しい順）
   // ─────────────────────────────────────────
   badmintonLog: [
+    {
+      date:      "4/27",
+      duration:  "講習会",
+      heartRate: "98/151",
+      aerobic:   1.7,
+      anaerobic: 1.5,
+      load:      37,
+      memo:      "指摘：内旋・外旋ができていない／握りと握りすぎ／ラケット面がシャトルに真っ直ぐ当たっていない／ステップができず下がれない・戻れない\n次の優先課題：内旋・外旋の習得とフットワーク（ステップ）"
+    },
     {
       date:      "4/23",
       duration:  "60分",
