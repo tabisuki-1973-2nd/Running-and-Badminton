@@ -66,6 +66,10 @@ function renderToday() {
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
        <ul class="training-list">${m.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
 
+  const pointsHtml = (m.points && m.points.length)
+    ? `<div class="card-label" style="margin-top:12px">📌 今日のポイント</div>
+       <ul class="training-list">${m.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+
   document.getElementById('tab-today').innerHTML = `
     <div class="page-header">
       <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
@@ -75,6 +79,7 @@ function renderToday() {
       <div class="card-label">今日のメニュー</div>
       <div class="menu-main">${esc(m.menu)}</div>
       ${subHtml}
+      ${pointsHtml}
       ${trainingHtml}
       ${stale}
     </div>

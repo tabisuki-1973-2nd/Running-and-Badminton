@@ -10,9 +10,15 @@ window.trainingData = {
   // 今日タブ：当日メニュー（毎日更新）
   // ─────────────────────────────────────────
   todayMenu: {
-    date:  "2026-04-29",
-    menu:  "ジョグ7km＋流し100m×3本",
-    sub:   ""
+    date:   "2026-04-29",
+    menu:   "ジョグ8.72km",
+    sub:    "✅ 完了：ペース6:57　心拍121/129　負荷71",
+    points: [
+      "心拍を上げない（イージーペース維持）",
+      "股関節から脚を動かす",
+      "腕は自然に振る・力まない",
+      "ピッチを細かく・ペース一定"
+    ]
   },
 
   // ─────────────────────────────────────────
@@ -21,22 +27,22 @@ window.trainingData = {
   // note: "仕事" | "旅行" でバッジ表示
   // ─────────────────────────────────────────
   weekSchedule: [
-    // ── 今週 4/20(月) 〜 4/26(日) ──
-    { date:"4/20", fullDate:"2026-04-20", day:"月", done:true,  menu:"休養",                                         actual:"" },
-    { date:"4/21", fullDate:"2026-04-21", day:"火", done:true,  menu:"🏸 バドミントン",                               actual:"心拍100/148　運動負荷40" },
-    { date:"4/22", fullDate:"2026-04-22", day:"水", done:true,  menu:"ジョグ5km＋流し3本",                            actual:"ペース6:49　運動負荷57" },
-    { date:"4/23", fullDate:"2026-04-23", day:"木", done:true,  menu:"3km計測＋🏸バドミントン",                       actual:"計測13:13　／　心拍107/144　負荷37" },
-    { date:"4/24", fullDate:"2026-04-24", day:"金", done:true,  menu:"休養＋筋トレ",                                  actual:"筋トレ2セット（筋肉痛のため）" },
-    { date:"4/25", fullDate:"2026-04-25", day:"土", done:true,  menu:"軽いジョグ 30〜40分（キロ7分以上）",            actual:"8.5km　ペース6:58　心拍122/128　負荷68" },
-    { date:"4/26", fullDate:"2026-04-26", day:"日", done:true,  menu:"朝ジョグ＋筋トレ",                              actual:"5km　ペース6:53　心拍130/144　負荷61　／　筋トレ全メニュー完了", note:"仕事" },
-    // ── 来週 4/27(月) 〜 5/3(日) ──
+    // ── 今週 4/27(月) 〜 5/3(日) ──
     { date:"4/27", fullDate:"2026-04-27", day:"月", done:true,  menu:"🏸 バドミントン講習会",                          actual:"1時間50分　心拍98/151　負荷37" },
     { date:"4/28", fullDate:"2026-04-28", day:"火", done:true,  menu:"ジョグ＋🏸 バドミントン",                        actual:"ジョグ3.73km　ペース6:56　負荷39　／　バドミントン1時間15分　心拍128/164　負荷99" },
-    { date:"4/29", fullDate:"2026-04-29", day:"水", done:false, menu:"ジョグ7km＋流し100m×3本",                      actual:"" },
+    { date:"4/29", fullDate:"2026-04-29", day:"水", done:true,  menu:"ジョグ＋流し",                                  actual:"8.72km　ペース6:57　心拍121/129　負荷71" },
     { date:"4/30", fullDate:"2026-04-30", day:"木", done:false, menu:"🏸 バドミントン",                               actual:"" },
     { date:"5/1",  fullDate:"2026-05-01", day:"金", done:false, menu:"テンポ走7km（5:30〜6:00/km）",                  actual:"" },
     { date:"5/2",  fullDate:"2026-05-02", day:"土", done:false, menu:"ジョグ7km",                                    actual:"" },
-    { date:"5/3",  fullDate:"2026-05-03", day:"日", done:false, menu:"旅行：練習困難",                                actual:"", note:"旅行" }
+    { date:"5/3",  fullDate:"2026-05-03", day:"日", done:false, menu:"旅行：練習困難",                                actual:"", note:"旅行" },
+    // ── 来週 5/4(月) 〜 5/10(日) ──
+    { date:"5/4",  fullDate:"2026-05-04", day:"月", done:false, menu:"休養 or 軽いジョグ",                            actual:"" },
+    { date:"5/5",  fullDate:"2026-05-05", day:"火", done:false, menu:"🏸 バドミントン",                               actual:"" },
+    { date:"5/6",  fullDate:"2026-05-06", day:"水", done:false, menu:"ジョグ7km＋流し100m×3本",                      actual:"" },
+    { date:"5/7",  fullDate:"2026-05-07", day:"木", done:false, menu:"🏸 バドミントン",                               actual:"" },
+    { date:"5/8",  fullDate:"2026-05-08", day:"金", done:false, menu:"テンポ走7km（5:30〜6:00/km）",                  actual:"" },
+    { date:"5/9",  fullDate:"2026-05-09", day:"土", done:false, menu:"ロング走10〜12km",                              actual:"" },
+    { date:"5/10", fullDate:"2026-05-10", day:"日", done:false, menu:"休養",                                         actual:"" }
   ],
 
   // ─────────────────────────────────────────
@@ -89,6 +95,16 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "4/29",
+      type:       "イージーラン",
+      distance:   "8.72km",
+      pace:       "6:57",
+      heartRate:  "121/129",
+      pitch:      "166/175",
+      load:       71,
+      memo:       "昨日の疲れは少ない。心拍・股関節・腕・ピッチ・ペース一定を意識。6km過ぎからお尻〜ハムに張り感→折り返し。流しは実施せず"
+    },
     {
       date:       "4/28",
       type:       "イージーラン",
