@@ -153,6 +153,13 @@ html, body {
   line-height: 1.55;
 }
 
+.next-date {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
 .training-list {
   margin: 6px 0 0 0;
   padding-left: 18px;

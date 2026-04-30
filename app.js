@@ -55,20 +55,39 @@ function switchTab(id, btn) {
 function renderToday() {
   const today = new Date();
   const ts    = todayStr();
-  const m     = D.todayMenu;
-  const stale = m.date !== ts
-    ? '<p class="stale-notice">⚠️ メニューはまだ更新されていません</p>' : '';
 
-  const subHtml = m.sub
-    ? `<div class="menu-sub">${esc(m.sub).replace(/\n/g,'<br>')}</div>` : '';
+  // 今日のエントリを探す
+  const todayEntry = D.weekSchedule.find(d => d.fullDate === ts);
+  // 次の未完了エントリを探す（今日より後）
+  const nextEntry  = D.weekSchedule.find(d => d.fullDate > ts && !d.done);
 
-  const trainingHtml = (m.training && m.training.length)
+  // 表示対象：今日が未完了→今日、それ以外→次の練習日
+  const entry   = (todayEntry && !todayEntry.done) ? todayEntry : (nextEntry || todayEntry);
+  const isToday = entry && entry.fullDate === ts;
+
+  if (!entry) {
+    document.getElementById('tab-today').innerHTML = `
+      <div class="page-header">
+        <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
+      </div>
+      <div class="card"><div class="menu-main">スケジュールなし</div></div>
+    `;
+    return;
+  }
+
+  const label     = isToday ? '今日のメニュー' : '次の練習';
+  const dateLabel = isToday ? '' : `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>`;
+
+  const actualHtml = entry.actual
+    ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
+
+  const pointsHtml = (entry.points && entry.points.length)
+    ? `<div class="card-label" style="margin-top:12px">📌 ポイント</div>
+       <ul class="training-list">${entry.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+
+  const trainingHtml = (entry.training && entry.training.length)
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
-       <ul class="training-list">${m.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
-
-  const pointsHtml = (m.points && m.points.length)
-    ? `<div class="card-label" style="margin-top:12px">📌 今日のポイント</div>
-       <ul class="training-list">${m.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+       <ul class="training-list">${entry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
 
   document.getElementById('tab-today').innerHTML = `
     <div class="page-header">
@@ -76,16 +95,13 @@ function renderToday() {
     </div>
 
     <div class="card">
-      <div class="card-label">今日のメニュー</div>
-      <div class="menu-main">${esc(m.menu)}</div>
-      ${subHtml}
+      <div class="card-label">${label}</div>
+      ${dateLabel}
+      <div class="menu-main">${esc(entry.menu)}</div>
+      ${actualHtml}
       ${pointsHtml}
       ${trainingHtml}
-      ${stale}
     </div>
-
-    ${runCard(D.runningLog[0],   '🏃 前回のランニング')}
-    ${badCard(D.badmintonLog[0], '🏸 前回のバドミントン')}
   `;
 }
 
@@ -242,12 +258,13 @@ function renderRecords() {
               onclick="switchRec('run')">🏃 ランニング</button>
       <button class="subtab-btn ${recTab === 'bad' ? 'active' : ''}"
               onclick="switchRec('bad')">🏸 バドミントン</button>
+      <button class="subtab-btn ${recTab === 'str' ? 'active' : ''}"
+              onclick="switchRec('str')">💪 筋トレ</button>
     </div>
     <div id="rec-content">
-      ${recTab === 'run'
-        ? D.runningLog.map(r => runCard(r, r.type)).join('')
-        : D.badmintonLog.map(b => badCard(b, 'バドミントン')).join('')
-      }
+      ${recTab === 'run' ? D.runningLog.map(r => runCard(r, r.type)).join('')
+      : recTab === 'bad' ? D.badmintonLog.map(b => badCard(b, 'バドミントン')).join('')
+      : D.strengthLog.map(s => strengthCard(s)).join('')}
     </div>
   `;
 }
@@ -255,6 +272,22 @@ function renderRecords() {
 function switchRec(tab) {
   recTab = tab;
   renderRecords();
+}
+
+// ── 筋トレカード ───────────────────────────────────────────
+
+function strengthCard(s) {
+  const items = (s.items && s.items.length)
+    ? `<ul class="training-list">${s.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : '';
+  const memo = s.memo
+    ? `<div class="memo">${esc(s.memo)}</div>` : '';
+  return `
+    <div class="card">
+      <div class="card-label">💪 筋トレ</div>
+      <div class="record-title">${esc(s.date)}</div>
+      ${items}
+      ${memo}
+    </div>`;
 }
 
 // ── レースタブ ────────────────────────────────────────────
