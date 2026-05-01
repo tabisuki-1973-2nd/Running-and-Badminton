@@ -25,11 +25,10 @@ window.trainingData = {
     { date:"4/28", fullDate:"2026-04-28", day:"火", done:true,  menu:"ジョグ＋🏸 バドミントン",                        actual:"ジョグ3.73km　ペース6:56　負荷39　／　バドミントン1時間15分　心拍128/164　負荷99" },
     { date:"4/29", fullDate:"2026-04-29", day:"水", done:true,  menu:"ジョグ＋流し",                                  actual:"8.72km　ペース6:57　心拍121/129　負荷71" },
     { date:"4/30", fullDate:"2026-04-30", day:"木", done:true,  menu:"🏸 バドミントン",                               actual:"1時間　心拍118/144　負荷54" },
-    { date:"5/1",  fullDate:"2026-05-01", day:"金", done:false, menu:"テンポ走7km（5:30〜6:00/km）",                  actual:"",
-      points:   ["キロ5:30〜6:00のペースを維持", "心拍140〜155を目安に", "ペース変動を最小限に抑える"],
-      training: ["プランク　30秒 × ２セット", "バードドッグ（左右）　各10回 × ２セット"] },
-    { date:"5/2",  fullDate:"2026-05-02", day:"土", done:false, menu:"ジョグ7km",                                    actual:"" },
-    { date:"5/3",  fullDate:"2026-05-03", day:"日", done:false, menu:"休養 or ジョグ",                               actual:"" },
+    { date:"5/1",  fullDate:"2026-05-01", day:"金", done:true,  menu:"筋トレのみ",                                    actual:"筋トレ完了　雨のためランニング中止" },
+    { date:"5/2",  fullDate:"2026-05-02", day:"土", done:false, menu:"テンポ走7km（5:30〜6:00/km）",                  actual:"",
+      points:   ["キロ5:30〜6:00のペースを維持", "心拍140〜155を目安に", "ペース変動を最小限に抑える"] },
+    { date:"5/3",  fullDate:"2026-05-03", day:"日", done:false, menu:"ジョグ7〜10km",                                actual:"" },
     // ── 来週 5/4(月) 〜 5/10(日) ──
     { date:"5/4",  fullDate:"2026-05-04", day:"月", done:false, menu:"✈️ 旅行・練習困難",                             actual:"", note:"旅行" },
     { date:"5/5",  fullDate:"2026-05-05", day:"火", done:false, menu:"✈️ 旅行・ジョグできれば",                        actual:"", note:"旅行" },
@@ -358,6 +357,11 @@ window.trainingData = {
   // 筋トレログ（新しい順）
   // ─────────────────────────────────────────
   strengthLog: [
+    {
+      date:  "5/1",
+      items: ["プランク　30秒 × ２セット", "バードドッグ（左右）　10秒 × ２セット"],
+      memo:  "プランクは安定。バードドッグは手足が安定せず伸ばせない・浮かせた手足もしっかり伸ばせない。要継続練習"
+    },
     {
       date:  "4/26",
       items: ["プランク　30秒 × ２セット", "バードドッグ（左右）　各10回 × ２セット", "腕立て伏せ　10〜15回 × ２セット", "カーフレイズ　20回 × ２セット"],
