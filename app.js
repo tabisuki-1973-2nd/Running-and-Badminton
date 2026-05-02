@@ -89,11 +89,19 @@ function renderToday() {
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
        <ul class="training-list">${entry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
 
+  // 今日が完了済みで別エントリを表示している場合、今日の筋トレを別カードで表示
+  const todayStrengthHtml = (todayEntry && todayEntry !== entry && todayEntry.training && todayEntry.training.length)
+    ? `<div class="card">
+        <div class="card-label">💪 今日の筋トレメニュー</div>
+        <ul class="training-list">${todayEntry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+       </div>` : '';
+
   document.getElementById('tab-today').innerHTML = `
     <div class="page-header">
       <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
     </div>
 
+    ${todayStrengthHtml}
     <div class="card">
       <div class="card-label">${label}</div>
       ${dateLabel}
