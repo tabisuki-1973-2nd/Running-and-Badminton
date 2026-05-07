@@ -134,16 +134,6 @@ window.trainingData = {
   runningLog: [
     {
       date:       "5/7",
-      type:       "バドミントン",
-      duration:   "60分",
-      heartRate:  "103/143",
-      aerobic:    2.0,
-      anaerobic:  0.8,
-      load:       36,
-      memo:       "肘を先に出してラケットを振ることを意識。前半は実践できたが後半に力みが戻りミスショット増。前後の揺さぶりにはある程度対応できた。ライン際の見極めで何度か失点"
-    },
-    {
-      date:       "5/7",
       type:       "イージーラン",
       distance:   "5km",
       pace:       "6:50",
@@ -382,6 +372,15 @@ window.trainingData = {
   // バドミントンログ（新しい順）
   // ─────────────────────────────────────────
   badmintonLog: [
+    {
+      date:      "5/7",
+      duration:  "60分",
+      heartRate: "103/143",
+      aerobic:   2.0,
+      anaerobic: 0.8,
+      load:      36,
+      memo:      "肘を先に出してラケットを振ることを意識。前半は実践できたが後半に力みが戻りミスショット増。前後の揺さぶりにはある程度対応できた。ライン際の見極めで何度か失点"
+    },
     {
       date:      "4/30",
       duration:  "60分",
