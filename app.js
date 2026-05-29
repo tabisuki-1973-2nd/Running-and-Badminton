@@ -66,6 +66,11 @@ function monthlyStats(today) {
   };
 }
 
+function strengthDone(entry) {
+  if (!entry) return false;
+  return (D.strengthLog || []).some(s => s.date === entry.date);
+}
+
 // ── タブ切り替え ───────────────────────────────────────────
 
 function switchTab(id, btn) {
@@ -116,12 +121,12 @@ function renderToday() {
     ? `<div class="card-label" style="margin-top:12px">📌 ポイント</div>
        <ul class="training-list">${entry.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
 
-  const trainingHtml = (entry.training && entry.training.length)
+  const trainingHtml = (!strengthDone(entry) && entry.training && entry.training.length)
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
        <ul class="training-list">${entry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
 
   // 今日が完了済みで別エントリを表示している場合、今日の筋トレを別カードで表示
-  const todayStrengthHtml = (todayEntry && todayEntry !== entry && todayEntry.training && todayEntry.training.length)
+  const todayStrengthHtml = (todayEntry && todayEntry !== entry && !strengthDone(todayEntry) && todayEntry.training && todayEntry.training.length)
     ? `<div class="card">
         <div class="card-label">💪 今日の筋トレメニュー</div>
         <ul class="training-list">${todayEntry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
