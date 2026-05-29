@@ -168,6 +168,41 @@ html, body {
   line-height: 1.8;
 }
 
+.monthly-card {
+  padding-bottom: 12px;
+}
+.monthly-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.monthly-item {
+  min-width: 0;
+  padding: 8px 6px;
+  border-radius: 10px;
+  background: var(--bg);
+  text-align: center;
+}
+.monthly-value {
+  display: inline;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text1);
+  line-height: 1;
+}
+.monthly-unit {
+  display: inline;
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text3);
+}
+.monthly-name {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
 /* ===== Week Schedule ===== */
 .week-section {
   margin: 0 16px 20px;

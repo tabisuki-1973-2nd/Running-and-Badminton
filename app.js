@@ -41,6 +41,31 @@ function esc(s) {
     .replace(/"/g,'&quot;');
 }
 
+function logMonth(dateLabel) {
+  const m = String(dateLabel || '').match(/^(\d{1,2})\//);
+  return m ? Number(m[1]) : null;
+}
+
+function distanceKm(distance) {
+  const m = String(distance || '').match(/([\d.]+)/);
+  return m ? Number(m[1]) : 0;
+}
+
+function monthlyStats(today) {
+  const month = today.getMonth() + 1;
+  const runs = (D.runningLog || []).filter(r => logMonth(r.date) === month);
+  const badminton = (D.badmintonLog || []).filter(b => logMonth(b.date) === month);
+  const strength = (D.strengthLog || []).filter(s => logMonth(s.date) === month);
+  const runKm = runs.reduce((sum, r) => sum + distanceKm(r.distance), 0);
+
+  return {
+    label: `${month}月`,
+    runKm,
+    badmintonCount: badminton.length,
+    strengthCount: strength.length
+  };
+}
+
 // ── タブ切り替え ───────────────────────────────────────────
 
 function switchTab(id, btn) {
@@ -77,6 +102,28 @@ function renderToday() {
 
   const label     = isToday ? '今日のメニュー' : '次の練習';
   const dateLabel = isToday ? '' : `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>`;
+  const stats = monthlyStats(today);
+  const statsHtml = `
+    <div class="card monthly-card">
+      <div class="card-label">${esc(stats.label)}の実績</div>
+      <div class="monthly-grid">
+        <div class="monthly-item">
+          <div class="monthly-value">${stats.runKm.toFixed(1)}</div>
+          <div class="monthly-unit">km</div>
+          <div class="monthly-name">ラン</div>
+        </div>
+        <div class="monthly-item">
+          <div class="monthly-value">${stats.badmintonCount}</div>
+          <div class="monthly-unit">回</div>
+          <div class="monthly-name">バド</div>
+        </div>
+        <div class="monthly-item">
+          <div class="monthly-value">${stats.strengthCount}</div>
+          <div class="monthly-unit">回</div>
+          <div class="monthly-name">筋トレ</div>
+        </div>
+      </div>
+    </div>`;
 
   const actualHtml = entry.actual
     ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
@@ -102,6 +149,7 @@ function renderToday() {
     </div>
 
     ${todayStrengthHtml}
+    ${statsHtml}
     <div class="card">
       <div class="card-label">${label}</div>
       ${dateLabel}
