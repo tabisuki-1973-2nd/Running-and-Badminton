@@ -104,25 +104,9 @@ function renderToday() {
   const dateLabel = isToday ? '' : `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>`;
   const stats = monthlyStats(today);
   const statsHtml = `
-    <div class="card monthly-card">
-      <div class="card-label">${esc(stats.label)}の実績</div>
-      <div class="monthly-grid">
-        <div class="monthly-item">
-          <div class="monthly-value">${stats.runKm.toFixed(1)}</div>
-          <div class="monthly-unit">km</div>
-          <div class="monthly-name">ラン</div>
-        </div>
-        <div class="monthly-item">
-          <div class="monthly-value">${stats.badmintonCount}</div>
-          <div class="monthly-unit">回</div>
-          <div class="monthly-name">バド</div>
-        </div>
-        <div class="monthly-item">
-          <div class="monthly-value">${stats.strengthCount}</div>
-          <div class="monthly-unit">回</div>
-          <div class="monthly-name">筋トレ</div>
-        </div>
-      </div>
+    <div class="monthly-summary">
+      <div class="monthly-title">${esc(stats.label)}の実績</div>
+      <div class="monthly-line">ラン ${stats.runKm.toFixed(1)}km ／ バド ${stats.badmintonCount}回 ／ 筋トレ ${stats.strengthCount}回</div>
     </div>`;
 
   const actualHtml = entry.actual
@@ -149,7 +133,6 @@ function renderToday() {
     </div>
 
     ${todayStrengthHtml}
-    ${statsHtml}
     <div class="card">
       <div class="card-label">${label}</div>
       ${dateLabel}
@@ -158,6 +141,7 @@ function renderToday() {
       ${pointsHtml}
       ${trainingHtml}
     </div>
+    ${statsHtml}
   `;
 }
 

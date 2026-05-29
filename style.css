@@ -168,38 +168,20 @@ html, body {
   line-height: 1.8;
 }
 
-.monthly-card {
-  padding-bottom: 12px;
-}
-.monthly-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-.monthly-item {
-  min-width: 0;
-  padding: 8px 6px;
-  border-radius: 10px;
-  background: var(--bg);
-  text-align: center;
-}
-.monthly-value {
-  display: inline;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text1);
-  line-height: 1;
-}
-.monthly-unit {
-  display: inline;
-  margin-left: 2px;
-  font-size: 12px;
-  font-weight: 600;
+.monthly-summary {
+  margin: 2px 16px 16px;
+  padding: 0 2px;
   color: var(--text3);
 }
-.monthly-name {
-  margin-top: 5px;
-  font-size: 12px;
+.monthly-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 3px;
+}
+.monthly-line {
+  font-size: 13px;
+  line-height: 1.45;
   color: var(--text2);
 }
 
