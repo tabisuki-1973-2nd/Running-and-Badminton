@@ -104,7 +104,7 @@ function renderToday() {
   const dateLabel = isToday ? '' : `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>`;
   const stats = monthlyStats(today);
   const statsHtml = `
-    <div class="monthly-summary">
+    <div class="card monthly-summary">
       <div class="monthly-title">${esc(stats.label)}の実績</div>
       <div class="monthly-line">ラン ${stats.runKm.toFixed(1)}km ／ バド ${stats.badmintonCount}回 ／ 筋トレ ${stats.strengthCount}回</div>
     </div>`;

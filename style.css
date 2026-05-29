@@ -169,20 +169,22 @@ html, body {
 }
 
 .monthly-summary {
-  margin: 2px 16px 16px;
-  padding: 0 2px;
-  color: var(--text3);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .monthly-title {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.4px;
   margin-bottom: 3px;
+  color: var(--text3);
 }
 .monthly-line {
   font-size: 13px;
   line-height: 1.45;
   color: var(--text2);
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* ===== Week Schedule ===== */
