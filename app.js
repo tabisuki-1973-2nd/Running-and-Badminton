@@ -190,6 +190,7 @@ function runCard(r, title) {
   const rows = [
     row('心拍 平均/最大', r.heartRate),
     r.pitch    ? row('ピッチ 平均/最高', r.pitch) : '',
+    r.groundContact ? row('平均接地時間', r.groundContact) : '',
     (r.aerobic != null) ? row('有酸素/無酸素', `${r.aerobic}/${r.anaerobic}`) : '',
     row('運動負荷', r.load)
   ].filter(Boolean).join('');
