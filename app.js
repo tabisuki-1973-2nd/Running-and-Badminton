@@ -117,8 +117,9 @@ function renderToday() {
   const actualHtml = entry.actual
     ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
 
-  const targetHtml = entry.target
-    ? `<span class="target-chip">${esc(entry.target)}</span>` : '';
+  const pointsHtml = (entry.points && entry.points.length)
+    ? `<div class="card-label" style="margin-top:12px">📌 ポイント</div>
+       <ul class="training-list">${entry.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
 
   const trainingHtml = (!strengthDone(entry) && entry.training && entry.training.length)
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
@@ -140,11 +141,9 @@ function renderToday() {
     <div class="card">
       <div class="card-label">${label}</div>
       ${dateLabel}
-      <div class="menu-line">
-        <div class="menu-main">${esc(entry.menu)}</div>
-        ${targetHtml}
-      </div>
+      <div class="menu-main">${esc(entry.menu)}</div>
       ${actualHtml}
+      ${pointsHtml}
       ${trainingHtml}
     </div>
     ${statsHtml}
