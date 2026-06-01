@@ -117,9 +117,15 @@ function renderToday() {
   const actualHtml = entry.actual
     ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
 
-  const pointsHtml = (entry.points && entry.points.length)
-    ? `<div class="card-label" style="margin-top:12px">📌 ポイント</div>
-       <ul class="training-list">${entry.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+  const pointSection = (label, items) => (items && items.length)
+    ? `<div class="card-label section-label">${label}</div>
+       <ul class="training-list">${items.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+
+  const pointsHtml = [
+    pointSection('🏃 ラン目標', entry.runPoints),
+    pointSection('🏸 バドミントン目標', entry.badmintonPoints),
+    pointSection('📌 ポイント', entry.points)
+  ].join('');
 
   const trainingHtml = (!strengthDone(entry) && entry.training && entry.training.length)
     ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
