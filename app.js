@@ -86,16 +86,11 @@ function renderToday() {
   const today = new Date();
   const ts    = todayStr();
 
-  // 今日のエントリを探す
   const todayEntry = D.weekSchedule.find(d => d.fullDate === ts);
-  // 次の未完了エントリを探す（今日より後）
   const nextEntry  = D.weekSchedule.find(d => d.fullDate > ts && !d.done);
+  const entries = [todayEntry, nextEntry].filter(Boolean);
 
-  // 表示対象：今日が未完了→今日、それ以外→次の練習日
-  const entry   = (todayEntry && !todayEntry.done) ? todayEntry : (nextEntry || todayEntry);
-  const isToday = entry && entry.fullDate === ts;
-
-  if (!entry) {
+  if (!entries.length) {
     document.getElementById('tab-today').innerHTML = `
       <div class="page-header">
         <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
@@ -105,8 +100,6 @@ function renderToday() {
     return;
   }
 
-  const label     = isToday ? '今日のメニュー' : '次の練習';
-  const dateLabel = isToday ? '' : `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>`;
   const stats = monthlyStats(today);
   const statsHtml = `
     <div class="card monthly-summary">
@@ -114,44 +107,45 @@ function renderToday() {
       <div class="monthly-line">ラン ${stats.runKm.toFixed(1)}km ／ バド ${stats.badmintonCount}回 ／ 筋トレ ${stats.strengthCount}回</div>
     </div>`;
 
-  const actualHtml = entry.actual
-    ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
-
   const pointSection = (label, items) => (items && items.length)
     ? `<div class="card-label section-label">${label}</div>
        <ul class="training-list">${items.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
 
-  const pointsHtml = [
-    pointSection('🏃 ラン目標', entry.runPoints),
-    pointSection('🏸 バドミントン目標', entry.badmintonPoints),
-    pointSection('📌 ポイント', entry.points)
-  ].join('');
+  const scheduleCard = (entry, label, showDate) => {
+    const actualHtml = entry.actual
+      ? `<div class="menu-sub">✅ ${esc(entry.actual)}</div>` : '';
+    const pointsHtml = [
+      pointSection('🏃 ラン目標', entry.runPoints),
+      pointSection('🏸 バドミントン目標', entry.badmintonPoints),
+      pointSection('📌 ポイント', entry.points)
+    ].join('');
+    const trainingHtml = (!strengthDone(entry) && entry.training && entry.training.length)
+      ? `<div class="card-label section-label">💪 筋トレメニュー</div>
+         <ul class="training-list">${entry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
+    const dateLabel = showDate ? `<div class="next-date">${esc(entry.date)}（${esc(entry.day)}）</div>` : '';
 
-  const trainingHtml = (!strengthDone(entry) && entry.training && entry.training.length)
-    ? `<div class="card-label" style="margin-top:12px">💪 筋トレメニュー</div>
-       <ul class="training-list">${entry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
-
-  // 今日が完了済みで別エントリを表示している場合、今日の筋トレを別カードで表示
-  const todayStrengthHtml = (todayEntry && todayEntry !== entry && !strengthDone(todayEntry) && todayEntry.training && todayEntry.training.length)
-    ? `<div class="card">
-        <div class="card-label">💪 今日の筋トレメニュー</div>
-        <ul class="training-list">${todayEntry.training.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
-       </div>` : '';
-
-  document.getElementById('tab-today').innerHTML = `
-    <div class="page-header">
-      <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
-    </div>
-
-    ${todayStrengthHtml}
-    <div class="card">
+    return `<div class="card">
       <div class="card-label">${label}</div>
       ${dateLabel}
       <div class="menu-main">${esc(entry.menu)}</div>
       ${actualHtml}
       ${pointsHtml}
       ${trainingHtml}
+    </div>`;
+  };
+
+  const todayCardHtml = todayEntry
+    ? scheduleCard(todayEntry, '今日のメニュー', false) : '';
+  const nextCardHtml = nextEntry
+    ? scheduleCard(nextEntry, '次の予定', true) : '';
+
+  document.getElementById('tab-today').innerHTML = `
+    <div class="page-header">
+      <h1>今日 <span class="date-label">${formatJpDate(today)}</span></h1>
     </div>
+
+    ${todayCardHtml}
+    ${nextCardHtml}
     ${statsHtml}
   `;
 }
