@@ -246,8 +246,11 @@ function badCard(b, title) {
 
 function renderWeek() {
   const ts      = todayStr();
-  const thisW   = D.weekSchedule.slice(0, 7);
-  const nextW   = D.weekSchedule.slice(7, 14);
+  const todayIndex = D.weekSchedule.findIndex(d => d.fullDate === ts);
+  const dayOfWeek = new Date(`${ts}T00:00:00`).getDay();
+  const weekStart = todayIndex >= 0 ? todayIndex - ((dayOfWeek + 6) % 7) : 0;
+  const thisW   = D.weekSchedule.slice(weekStart, weekStart + 7);
+  const nextW   = D.weekSchedule.slice(weekStart + 7, weekStart + 14);
 
   function weekRange(arr) {
     return `${arr[0].date}（月）〜 ${arr[6].date}（日）`;
