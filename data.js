@@ -227,6 +227,19 @@ window.trainingData = {
       memo:       "朝ジョグ6km。5km予定だったが、4km地点で心拍がさほど上がっていなかったため6kmまで延長。ピッチは169で、あと一歩上げたい感覚あり。上下動比9.4%"
     },
     {
+      date:       "7/20",
+      type:       "イージーラン",
+      distance:   "5km",
+      pace:       "6:59",
+      heartRate:  "122/132",
+      pitch:      "169/180",
+      groundContact: "278ms",
+      aerobic:    2.5,
+      anaerobic:  0,
+      load:       55,
+      memo:       "朝ジョグ5km。昨日の疲労は大きくなく淡々と走れたが、3km過ぎから気温上昇とともに心拍・体温感が上がったため5kmで終了。上下動比9.4%"
+    },
+    {
       date:       "7/19",
       type:       "イージーラン",
       distance:   "9km",
