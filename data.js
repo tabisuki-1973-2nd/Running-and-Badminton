@@ -2,6 +2,14 @@
 // data.js  —  更新日：2026-07-27
 // Codexに「アプリ更新してください」と依頼するとこのファイルが更新されます
 // ============================================================
+const standardStrengthTraining = [
+  "プランク　30〜45秒 × ２セット",
+  "バードドッグ（左右）　各10回 × ２セット",
+  "ヒップリフト　15回 × ２セット",
+  "カーフレイズ　20回 × ２セット",
+  "腸腰筋ストレッチ（左右）　30秒"
+];
+
 window.trainingData = {
 
   lastUpdated: "2026-07-27",
@@ -87,12 +95,52 @@ window.trainingData = {
     { date:"7/31", fullDate:"2026-07-31", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・6:55〜7:20/km・余力残し", actual:"",
       runPoints: ["走る場合：週末前の準備ジョグ3〜5km", "注意点：距離を稼ぐ日ではなく、脚を整える日"],
       training: ["プランク　30〜45秒 × ２セット", "バードドッグ（左右）　各10回 × ２セット", "ヒップリフト　15回 × ２セット", "カーフレイズ　20回 × ２セット", "腸腰筋ストレッチ（左右）　30秒"] },
-    { date:"8/1", fullDate:"2026-08-01", day:"土", done:false, menu:"ロング走", target:"10〜12km・6:55〜7:20/km・給水あり", actual:"",
-      runPoints: ["目標距離：10〜12km", "給水：5km・10km目安。ネックゲイターも濡らし直す", "注意点：足首・アキレス腱、腰に違和感が出たら即短縮"],
+    { date:"8/1", fullDate:"2026-08-01", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・暑さと予定を優先", actual:"",
+      runPoints: ["土曜午前は予定あり。午後のロング走は暑さのため実施しない", "走る場合も夕方に3kmまでの軽い調整。疲労や暑さがあれば休養"],
+      training: ["筋トレは休み。脚に問題がなければ腸腰筋ストレッチのみ30秒"] },
+    { date:"8/2", fullDate:"2026-08-02", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・6:55〜7:20/km・早朝・給水あり", actual:"",
+      runPoints: ["土曜から移動。早朝に10〜12kmを目安に実施", "給水：5km・10km目安。ネックゲイターも濡らし直す", "足首・アキレス腱、腰に違和感が出たら即短縮。距離の帳尻合わせはしない"],
       training: ["筋トレは休み。腸腰筋ストレッチのみ、痛みのない範囲で30秒"] },
-    { date:"8/2", fullDate:"2026-08-02", day:"日", done:false, menu:"ジョグ（軽め）or 休養", target:"3〜5km・6:55〜7:20/km・体感優先", actual:"",
-      runPoints: ["走る場合：3〜5kmの回復ジョグ", "注意点：ロング走翌日の疲労と暑さを優先"],
-      training: ["プランク　30〜45秒 × ２セット", "バードドッグ（左右）　各10回 × ２セット", "ヒップリフト　15回 × ２セット", "カーフレイズ　20回 × ２セット", "腸腰筋ストレッチ（左右）　30秒"] }
+    // ── 8/3(月) 〜 8/9(日) ──
+    { date:"8/3", fullDate:"2026-08-03", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・6:55〜7:20/km・体感優先", actual:"",
+      runPoints: ["日曜ロング後の回復を最優先。走る場合も3〜5kmまで"], training: standardStrengthTraining },
+    { date:"8/4", fullDate:"2026-08-04", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
+      runPoints: ["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints: ["ラケットを胸の前に置く", "面を先に作り、慌てても握り込まない", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/5", fullDate:"2026-08-05", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"",
+      runPoints: ["火曜バドの疲労を優先。走る場合も軽く"], training: standardStrengthTraining },
+    { date:"8/6", fullDate:"2026-08-06", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
+      runPoints: ["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints: ["ラケットを胸の前に置く", "面を先に作り、慌てても握り込まない", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/7", fullDate:"2026-08-07", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"",
+      runPoints: ["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
+    { date:"8/8", fullDate:"2026-08-08", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"",
+      runPoints: ["午前予定あり。午後ロングは実施しない"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/9", fullDate:"2026-08-09", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"",
+      runPoints: ["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    // ── 8/10(月) 〜 8/16(日) ──
+    { date:"8/10", fullDate:"2026-08-10", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
+    { date:"8/11", fullDate:"2026-08-11", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/12", fullDate:"2026-08-12", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
+    { date:"8/13", fullDate:"2026-08-13", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/14", fullDate:"2026-08-14", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
+    { date:"8/15", fullDate:"2026-08-15", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/16", fullDate:"2026-08-16", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"", runPoints:["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    // ── 8/17(月) 〜 8/23(日) ──
+    { date:"8/17", fullDate:"2026-08-17", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
+    { date:"8/18", fullDate:"2026-08-18", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/19", fullDate:"2026-08-19", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
+    { date:"8/20", fullDate:"2026-08-20", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/21", fullDate:"2026-08-21", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
+    { date:"8/22", fullDate:"2026-08-22", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/23", fullDate:"2026-08-23", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"", runPoints:["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    // ── 8/24(月) 〜 8/31(月) ──
+    { date:"8/24", fullDate:"2026-08-24", day:"月", done:false, menu:"🏸 バドミントン講習会", target:"力を抜く・面を作る・構えでラケットを下げない", actual:"", runPoints:["ランは基本なし。講習会を優先"], badmintonPoints:["握り込みすぎず、インパクトで面を合わせる", "ラケットを胸の前に置き、打った後に構え直す", "ノックでできた動きをゲームでも再現する"], training: standardStrengthTraining },
+    { date:"8/25", fullDate:"2026-08-25", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["講習会翌日。朝は3kmを基本に、疲労があればランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/26", fullDate:"2026-08-26", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["月火の疲労を優先"], training: standardStrengthTraining },
+    { date:"8/27", fullDate:"2026-08-27", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/28", fullDate:"2026-08-28", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
+    { date:"8/29", fullDate:"2026-08-29", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/30", fullDate:"2026-08-30", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"", runPoints:["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/31", fullDate:"2026-08-31", day:"月", done:false, menu:"🏸 バドミントン講習会", target:"力を抜く・面を作る・構えでラケットを下げない", actual:"", runPoints:["ランは基本なし。講習会を優先"], badmintonPoints:["握り込みすぎず、インパクトで面を合わせる", "ラケットを胸の前に置き、打った後に構え直す", "ノックでできた動きをゲームでも再現する"], training: standardStrengthTraining }
   ],
 
   // ─────────────────────────────────────────
