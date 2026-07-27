@@ -252,8 +252,20 @@ function renderWeek() {
   const thisW   = D.weekSchedule.slice(weekStart, weekStart + 7);
   const nextW   = D.weekSchedule.slice(weekStart + 7, weekStart + 14);
 
-  function weekRange(arr) {
-    return `${arr[0].date}（月）〜 ${arr[6].date}（日）`;
+  function weekSection(label, arr) {
+    if (!arr.length) {
+      return `
+        <div class="week-section">
+          <div class="week-title">${label}</div>
+          <div class="day-row"><div class="day-menu">スケジュールを準備中</div></div>
+        </div>`;
+    }
+
+    return `
+      <div class="week-section">
+        <div class="week-title">${label}　${arr[0].date}（月）〜 ${arr[arr.length - 1].date}（日）</div>
+        ${arr.map(dayRow).join('')}
+      </div>`;
   }
 
   function dayRow(d) {
@@ -283,15 +295,8 @@ function renderWeek() {
   document.getElementById('tab-week').innerHTML = `
     <div class="page-header"><h1>スケジュール</h1></div>
 
-    <div class="week-section">
-      <div class="week-title">今週　${weekRange(thisW)}</div>
-      ${thisW.map(dayRow).join('')}
-    </div>
-
-    <div class="week-section">
-      <div class="week-title">来週　${weekRange(nextW)}</div>
-      ${nextW.map(dayRow).join('')}
-    </div>
+    ${weekSection('今週', thisW)}
+    ${weekSection('来週', nextW)}
   `;
 }
 
