@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-02",
+  lastUpdated: "2026-08-03",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -101,8 +101,8 @@ window.trainingData = {
       runPoints: ["実施：蒸し暑い早朝に7km。10kmは狙わず短縮", "評価：5km過ぎから心拍・ピッチ・接地が同時に乱れたため終了。少し歩いて帰宅した判断が適切", "次回：蒸し暑い日は距離より体感とフォームの乱れを優先。帳尻合わせはしない"],
       training: ["筋トレは休み。腸腰筋ストレッチのみ、痛みのない範囲で30秒"] },
     // ── 8/3(月) 〜 8/9(日) ──
-    { date:"8/3", fullDate:"2026-08-03", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・6:55〜7:20/km・体感優先", actual:"",
-      runPoints: ["日曜ロング後の回復を最優先。走る場合も3〜5kmまで"], training: standardStrengthTraining },
+    { date:"8/3", fullDate:"2026-08-03", day:"月", done:true, menu:"休養 or 回復ジョグ", target:"3〜5km・6:55〜7:20/km・体感優先", actual:"朝ジョグ5km完了　平均6:48　心拍125/139　ピッチ165　接地283ms　負荷66",
+      runPoints: ["実施：朝ジョグ5km。なぜかペースが上がり気味", "評価：ピッチ165・接地283msは安定感が弱く、狙った回復ジョグのフォームには届かなかった", "次回：ペースが自然に上がる日は、歩幅を小さくして6:55〜7:10/kmへ戻す。効果を求めて速く走り切る必要はない"], training: standardStrengthTraining },
     { date:"8/4", fullDate:"2026-08-04", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
       runPoints: ["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints: ["ラケットを胸の前に置く", "面を先に作り、慌てても握り込まない", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/5", fullDate:"2026-08-05", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"",
@@ -169,8 +169,8 @@ window.trainingData = {
     {
       name:     "NAHAマラソン",
       distance: "フル",
-      tbd:      true,
-      type:     "エントリー予定・正式発表待ち（例年12月第1日曜）"
+      date:     "2026-12-06",
+      type:     "エントリー確定・ファンラン（完走重視）"
     },
     {
       name:     "ふくい桜マラソン",
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/3",
+      type:       "リカバリー",
+      distance:   "5km",
+      pace:       "6:48",
+      heartRate:  "125/139",
+      pitch:      "165/173",
+      groundContact: "283ms",
+      aerobic:    2.8,
+      anaerobic:  0,
+      load:       66,
+      memo:       "ペースが自然に上がったジョグ。ピッチと接地時間に安定感がなく、結果としてただ5km走った感覚。上下動比9.5%"
+    },
     {
       date:       "8/2",
       type:       "イージーラン",
