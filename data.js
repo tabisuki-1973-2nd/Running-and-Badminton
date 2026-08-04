@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-03",
+  lastUpdated: "2026-08-04",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -103,8 +103,8 @@ window.trainingData = {
     // ── 8/3(月) 〜 8/9(日) ──
     { date:"8/3", fullDate:"2026-08-03", day:"月", done:true, menu:"休養 or 回復ジョグ", target:"3〜5km・6:55〜7:20/km・体感優先", actual:"朝ジョグ5km完了　平均6:48　心拍125/139　ピッチ165　接地283ms　負荷66",
       runPoints: ["実施：朝ジョグ5km。なぜかペースが上がり気味", "評価：ピッチ165・接地283msは安定感が弱く、狙った回復ジョグのフォームには届かなかった", "次回：ペースが自然に上がる日は、歩幅を小さくして6:55〜7:10/kmへ戻す。効果を求めて速く走り切る必要はない"], training: standardStrengthTraining },
-    { date:"8/4", fullDate:"2026-08-04", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
-      runPoints: ["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints: ["ラケットを胸の前に置く", "面を先に作り、慌てても握り込まない", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/4", fullDate:"2026-08-04", day:"火", done:true, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"朝ジョグ5km＋バドミントン1時間完了　ラン平均6:55・心拍123/135　バド心拍111/158　負荷80",
+      runPoints: ["実施：蒸し暑い朝のジョグ5km。途中で上がったペースを戻せた", "評価：昨日よりピッチ168・接地279msへ整い直せた"], badmintonPoints: ["実施：落ち着いてレシーブでき、力みは少なめ", "課題：連続スマッシュや態勢が整わない時の対応。バックは試合で浅くなりやすい", "次回：迷ったらフォアで返せる位置へ早く入る。力むとミスになるので返球の質を急がない"], training: standardStrengthTraining },
     { date:"8/5", fullDate:"2026-08-05", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"",
       runPoints: ["火曜バドの疲労を優先。走る場合も軽く"], training: standardStrengthTraining },
     { date:"8/6", fullDate:"2026-08-06", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/4",
+      type:       "イージーラン",
+      distance:   "5km",
+      pace:       "6:55",
+      heartRate:  "123/135",
+      pitch:      "168/176",
+      groundContact: "279ms",
+      aerobic:    2.7,
+      anaerobic:  0,
+      load:       59,
+      memo:       "蒸し暑い朝のジョグ。2〜3kmで一度ペースが上がったが、しっかり戻せた。昨日よりピッチと接地時間は改善。上下動比9.4%"
+    },
     {
       date:       "8/3",
       type:       "リカバリー",
@@ -1146,6 +1159,15 @@ window.trainingData = {
   // バドミントンログ（新しい順）
   // ─────────────────────────────────────────
   badmintonLog: [
+    {
+      date:      "8/4",
+      duration:  "60分",
+      heartRate: "111/158",
+      aerobic:   2.4,
+      anaerobic: 2.1,
+      load:      80,
+      memo:      "落ち着いてレシーブでき、力みも少なめ。連続スマッシュや態勢が整わない時は対応が遅れる。バックはアップでは力強いが、試合では浅い・ネットを越えない場面あり。フォアで返すため素早く落下点へ入りたい。サーブはまずまず。力むとミス"
+    },
     {
       date:      "7/28",
       duration:  "60分",
