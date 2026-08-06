@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-04",
+  lastUpdated: "2026-08-06",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -107,8 +107,8 @@ window.trainingData = {
       runPoints: ["実施：蒸し暑い朝のジョグ5km。途中で上がったペースを戻せた", "評価：昨日よりピッチ168・接地279msへ整い直せた"], badmintonPoints: ["実施：落ち着いてレシーブでき、力みは少なめ", "課題：連続スマッシュや態勢が整わない時の対応。バックは試合で浅くなりやすい", "次回：迷ったらフォアで返せる位置へ早く入る。力むとミスになるので返球の質を急がない"], training: standardStrengthTraining },
     { date:"8/5", fullDate:"2026-08-05", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"",
       runPoints: ["火曜バドの疲労を優先。走る場合も軽く"], training: standardStrengthTraining },
-    { date:"8/6", fullDate:"2026-08-06", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"",
-      runPoints: ["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints: ["ラケットを胸の前に置く", "面を先に作り、慌てても握り込まない", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/6", fullDate:"2026-08-06", day:"木", done:true, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"バドミントン1時間10分完了　心拍128/209　負荷115",
+      runPoints: ["ランは実施なし"], badmintonPoints: ["実施：バドミントン70分。全般的に力み・慌てによるミスが多め", "課題：バックステップができず、前寄りの位置からのクリア対応が遅れた。サーブミスも多め", "次回：クリアが来たらラケットを引く前に、右足を後ろへ一歩。先に落下点へ入る"], training: standardStrengthTraining },
     { date:"8/7", fullDate:"2026-08-07", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"",
       runPoints: ["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
     { date:"8/8", fullDate:"2026-08-08", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"",
@@ -1160,13 +1160,22 @@ window.trainingData = {
   // ─────────────────────────────────────────
   badmintonLog: [
     {
+      date:      "8/6",
+      duration:  "70分",
+      heartRate: "128/209",
+      aerobic:   3.0,
+      anaerobic: 2.2,
+      load:      115,
+      memo:      "バックステップができず、前寄りのポジションからのクリアに対応できなかった。シャトルは見えているがラケットで捉えられない場面あり。サーブミスも多め。全般的に力み・慌てによるミスが多かった。最大心拍209は体感と合わなければ計測外れ値の可能性あり"
+    },
+    {
       date:      "8/4",
       duration:  "60分",
       heartRate: "111/158",
       aerobic:   2.4,
       anaerobic: 2.1,
       load:      80,
-      memo:      "落ち着いてレシーブでき、力みも少なめ。連続スマッシュや態勢が整わない時は対応が遅れる。バックはアップでは力強いが、試合では浅い・ネットを越えない場面あり。フォアで返すため素早く落下点へ入りたい。サーブはまずまず。力むとミス"
+      memo:      "落ち着いてレシーブでき、力みも少なめ。連続スマッシュや態勢が整わない時は対応が遅れる。バックはアップでは力強いが、試合では浅い・ネットを越えない場面あり。フォアで返すため素早く落下点へ入りたい。サーブはまずまず。力むとミス。使用ラケット：赤"
     },
     {
       date:      "7/28",
