@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-06",
+  lastUpdated: "2026-08-07",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -109,8 +109,8 @@ window.trainingData = {
       runPoints: ["実施：完全休養。火曜バド後の回復を優先"], training: standardStrengthTraining },
     { date:"8/6", fullDate:"2026-08-06", day:"木", done:true, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"バドミントン1時間10分完了　心拍128/209　負荷115",
       runPoints: ["ランは実施なし"], badmintonPoints: ["実施：バドミントン70分。全般的に力み・慌てによるミスが多め", "課題：バックステップができず、前寄りの位置からのクリア対応が遅れた。サーブミスも多め", "次回：クリアが来たらラケットを引く前に、右足を後ろへ一歩。先に落下点へ入る"], training: standardStrengthTraining },
-    { date:"8/7", fullDate:"2026-08-07", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"",
-      runPoints: ["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
+    { date:"8/7", fullDate:"2026-08-07", day:"金", done:true, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"朝ジョグ3km完了　平均7:14　心拍120/129　ピッチ171　接地278ms　負荷35",
+      runPoints: ["実施：バド翌日の積極的休養として3kmジョグ", "評価：ペースを無視してピッチ171・接地278msに集中でき、目標値を上回った", "週末へ向けて疲労を残さないことを優先。距離追加は不要"], training: standardStrengthTraining },
     { date:"8/8", fullDate:"2026-08-08", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"",
       runPoints: ["午前予定あり。午後ロングは実施しない"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     { date:"8/9", fullDate:"2026-08-09", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"",
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/7",
+      type:       "リカバリー",
+      distance:   "3km",
+      pace:       "7:14",
+      heartRate:  "120/129",
+      pitch:      "171/176",
+      groundContact: "278ms",
+      aerobic:    2.2,
+      anaerobic:  0,
+      load:       35,
+      memo:       "バドミントンの疲労がある中、少しでも体を動かすために実施。ペースは無視してピッチと接地時間に集中し、どちらも目標値を上回った。上下動比9.6%"
+    },
     {
       date:       "8/4",
       type:       "イージーラン",
