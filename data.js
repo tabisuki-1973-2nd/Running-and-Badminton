@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-07",
+  lastUpdated: "2026-08-08",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -111,8 +111,8 @@ window.trainingData = {
       runPoints: ["ランは実施なし"], badmintonPoints: ["実施：バドミントン70分。全般的に力み・慌てによるミスが多め", "課題：バックステップができず、前寄りの位置からのクリア対応が遅れた。サーブミスも多め", "次回：クリアが来たらラケットを引く前に、右足を後ろへ一歩。先に落下点へ入る"], training: standardStrengthTraining },
     { date:"8/7", fullDate:"2026-08-07", day:"金", done:true, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"朝ジョグ3km完了　平均7:14　心拍120/129　ピッチ171　接地278ms　負荷35",
       runPoints: ["実施：バド翌日の積極的休養として3kmジョグ", "評価：ペースを無視してピッチ171・接地278msに集中でき、目標値を上回った", "週末へ向けて疲労を残さないことを優先。距離追加は不要"], training: standardStrengthTraining },
-    { date:"8/8", fullDate:"2026-08-08", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"",
-      runPoints: ["午前予定あり。午後ロングは実施しない"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/8", fullDate:"2026-08-08", day:"土", done:true, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"朝ジョグ10km完了　平均7:01　心拍128/151　ピッチ168　接地280ms　負荷93",
+      runPoints: ["明日ロング走ができないため、朝に10kmを前倒し", "評価：暑さはさほど厳しくなく、まずまず快適に走れた。ピッチ・接地は平凡", "MISSION冷却タオルを初使用。首から外して振り、巻き直すと冷たさが回復して首周りを涼しく保てた"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     { date:"8/9", fullDate:"2026-08-09", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"",
       runPoints: ["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     // ── 8/10(月) 〜 8/16(日) ──
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/8",
+      type:       "ロングジョグ",
+      distance:   "10km",
+      pace:       "7:01",
+      heartRate:  "128/151",
+      pitch:      "168/178",
+      groundContact: "280ms",
+      aerobic:    3.2,
+      anaerobic:  0,
+      load:       93,
+      memo:       "明日ロング走ができないため朝に10kmを実施。暑さはさほど厳しくなく、まずまず快適。ピッチと接地は平凡。MISSION冷却タオルを初使用し、首から外して振って巻き直すと冷たさが回復して首周りを涼しく保てた。上下動比9.5%"
+    },
     {
       date:       "8/7",
       type:       "リカバリー",
