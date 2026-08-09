@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-08",
+  lastUpdated: "2026-08-09",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -113,8 +113,8 @@ window.trainingData = {
       runPoints: ["実施：バド翌日の積極的休養として3kmジョグ", "評価：ペースを無視してピッチ171・接地278msに集中でき、目標値を上回った", "週末へ向けて疲労を残さないことを優先。距離追加は不要"], training: standardStrengthTraining },
     { date:"8/8", fullDate:"2026-08-08", day:"土", done:true, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"朝ジョグ10km完了　平均7:01　心拍128/151　ピッチ168　接地280ms　負荷93",
       runPoints: ["明日ロング走ができないため、朝に10kmを前倒し", "評価：暑さはさほど厳しくなく、まずまず快適に走れた。ピッチ・接地は平凡", "MISSION冷却タオルを初使用。首から外して振り、巻き直すと冷たさが回復して首周りを涼しく保てた"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
-    { date:"8/9", fullDate:"2026-08-09", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"",
-      runPoints: ["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/9", fullDate:"2026-08-09", day:"日", done:true, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"朝ジョグ5km完了　平均7:01　心拍120/130　ピッチ170　接地277ms　負荷53",
+      runPoints: ["実施：時間の都合で最初から5kmに設定", "評価：涼しい条件で平均心拍120。ピッチ170・接地277msを目標付近に揃えられた", "良かった点：距離を追わず、フォームの意識を保って短時間でまとめられた"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     // ── 8/10(月) 〜 8/16(日) ──
     { date:"8/10", fullDate:"2026-08-10", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
     { date:"8/11", fullDate:"2026-08-11", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/9",
+      type:       "ジョグ",
+      distance:   "5km",
+      pace:       "7:01",
+      heartRate:  "120/130",
+      pitch:      "170/178",
+      groundContact: "277ms",
+      aerobic:    2.6,
+      anaerobic:  0,
+      load:       53,
+      memo:       "時間がなかったため最初から5kmで実施。涼しく心拍は低め。ピッチと接地を意識し、どちらも目標値付近で走れた。上下動比9.5%"
+    },
     {
       date:       "8/8",
       type:       "ロングジョグ",
