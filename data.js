@@ -116,7 +116,7 @@ window.trainingData = {
     { date:"8/9", fullDate:"2026-08-09", day:"日", done:true, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"朝ジョグ5km完了　平均7:01　心拍120/130　ピッチ170　接地277ms　負荷53",
       runPoints: ["実施：時間の都合で最初から5kmに設定", "評価：涼しい条件で平均心拍120。ピッチ170・接地277msを目標付近に揃えられた", "良かった点：距離を追わず、フォームの意識を保って短時間でまとめられた"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     // ── 8/10(月) 〜 8/16(日) ──
-    { date:"8/10", fullDate:"2026-08-10", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
+    { date:"8/10", fullDate:"2026-08-10", day:"月", done:true, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"朝ジョグ6km完了　平均7:02　心拍122/132　ピッチ166　接地281ms　負荷61", runPoints:["実施：余裕があったため6kmジョグ。終了後は0.5km歩いて帰宅", "評価：心拍122/132・有酸素2.7・負荷61で、回復寄りの範囲に収められた", "注意点：スローペースから入った影響で、ペースを上げてもピッチ・接地時間は大きく改善しなかった。無理に回転を上げず自然なフォームを優先"], training: standardStrengthTraining },
     { date:"8/11", fullDate:"2026-08-11", day:"火", done:false, menu:"朝テンポ走＋🏸 バドミントン", target:"テンポ走は短め・夜バド優先", actual:"朝テンポ走5.5km完了　平均5:53　心拍134/151　ピッチ177　接地259ms　負荷112", runPoints:["実施：アップ後にテンポ走4km。予定の6:00/km前後より速く、5:30/km未満で推移", "評価：ピッチ177・接地259ms・上下動比8.4%と、テンポ区間のフォームは良好", "注意点：夜バド前としては予定より強度が上がった。夜は走らず、力みを抑えて無理をしない"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/12", fullDate:"2026-08-12", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
     { date:"8/13", fullDate:"2026-08-13", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
@@ -198,6 +198,19 @@ window.trainingData = {
       anaerobic:  0,
       load:       112,
       memo:       "台風で翌日に走れない可能性があるため実施。アップ後のテンポ区間4kmは、6:00/km前後の予定より速い5:30/km未満で推移。上下動比8.4%、平均上下動8.0cm。夜にバドミントン予定のため、以後は回復を優先。"
+    },
+    {
+      date:       "8/10",
+      type:       "ジョグ",
+      distance:   "6km",
+      pace:       "7:02",
+      heartRate:  "122/132",
+      pitch:      "166/177",
+      groundContact: "281ms",
+      aerobic:    2.7,
+      anaerobic:  0,
+      load:       61,
+      memo:       "少し余裕があったため6kmジョグ。スローペースから入ったので、ペースを上げてもピッチや接地時間はあまり上がらなかった。終了後は0.5km歩いて帰宅。上下動比9.6%、平均上下動8.1cm。"
     },
     {
       date:       "8/9",
