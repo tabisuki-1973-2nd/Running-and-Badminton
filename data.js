@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-09",
+  lastUpdated: "2026-08-11",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -117,7 +117,7 @@ window.trainingData = {
       runPoints: ["実施：時間の都合で最初から5kmに設定", "評価：涼しい条件で平均心拍120。ピッチ170・接地277msを目標付近に揃えられた", "良かった点：距離を追わず、フォームの意識を保って短時間でまとめられた"], training: ["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     // ── 8/10(月) 〜 8/16(日) ──
     { date:"8/10", fullDate:"2026-08-10", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
-    { date:"8/11", fullDate:"2026-08-11", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/11", fullDate:"2026-08-11", day:"火", done:false, menu:"朝テンポ走＋🏸 バドミントン", target:"テンポ走は短め・夜バド優先", actual:"朝テンポ走5.5km完了　平均5:53　心拍134/151　ピッチ177　接地259ms　負荷112", runPoints:["実施：アップ後にテンポ走4km。予定の6:00/km前後より速く、5:30/km未満で推移", "評価：ピッチ177・接地259ms・上下動比8.4%と、テンポ区間のフォームは良好", "注意点：夜バド前としては予定より強度が上がった。夜は走らず、力みを抑えて無理をしない"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/12", fullDate:"2026-08-12", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
     { date:"8/13", fullDate:"2026-08-13", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/14", fullDate:"2026-08-14", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/11",
+      type:       "テンポ走",
+      distance:   "5.5km",
+      pace:       "5:53",
+      heartRate:  "134/151",
+      pitch:      "177/190",
+      groundContact: "259ms",
+      aerobic:    3.4,
+      anaerobic:  0,
+      load:       112,
+      memo:       "台風で翌日に走れない可能性があるため実施。アップ後のテンポ区間4kmは、6:00/km前後の予定より速い5:30/km未満で推移。上下動比8.4%、平均上下動8.0cm。夜にバドミントン予定のため、以後は回復を優先。"
+    },
     {
       date:       "8/9",
       type:       "ジョグ",
