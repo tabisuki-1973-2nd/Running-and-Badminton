@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-11",
+  lastUpdated: "2026-08-13",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -118,8 +118,8 @@ window.trainingData = {
     // ── 8/10(月) 〜 8/16(日) ──
     { date:"8/10", fullDate:"2026-08-10", day:"月", done:true, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"朝ジョグ6km完了　平均7:02　心拍122/132　ピッチ166　接地281ms　負荷61", runPoints:["実施：余裕があったため6kmジョグ。終了後は0.5km歩いて帰宅", "評価：心拍122/132・有酸素2.7・負荷61で、回復寄りの範囲に収められた", "注意点：スローペースから入った影響で、ペースを上げてもピッチ・接地時間は大きく改善しなかった。無理に回転を上げず自然なフォームを優先"], training: standardStrengthTraining },
     { date:"8/11", fullDate:"2026-08-11", day:"火", done:true, menu:"朝テンポ走＋🏸 バドミントン", target:"テンポ走は短め・夜バド優先", actual:"朝テンポ走5.5km＋バドミントン1時間完了　ラン負荷112／バド負荷84", runPoints:["実施：アップ後にテンポ走4km。予定の6:00/km前後より速く、5:30/km未満で推移", "評価：ピッチ177・接地259ms・上下動比8.4%と、テンポ区間のフォームは良好", "注意点：テンポ走と夜バドを同日に実施。翌日は完全休養を優先"], badmintonPoints:["実施：バドミントン1時間。Garmin計測は41分54秒のため、心拍122/162・負荷84は参考値", "良かった点：レシーブの構えができ、腰を落とせている時はしっかり打ち返せた", "課題：油断すると腰が上がり、対応が遅れる。サーブはあと少し届かないショートが多め", "課題：中途半端なスイングや低い打点のスマッシュはネットを越えない。打点を上げ、最後まで振り切る", "使用ラケット：白"], training: standardStrengthTraining },
-    { date:"8/12", fullDate:"2026-08-12", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
-    { date:"8/13", fullDate:"2026-08-13", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/12", fullDate:"2026-08-12", day:"水", done:true, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"完全休養", runPoints:["実施：完全休養。8/11のテンポ走とバドミントンからの回復を優先"], training:["筋トレは休み。回復を優先"] },
+    { date:"8/13", fullDate:"2026-08-13", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"朝ジョグ6.5km完了　平均6:57　心拍120/129　ピッチ167　接地281ms　負荷62", runPoints:["実施：休養日明けの朝ジョグ6.5km。淡々と走行", "評価：平均心拍120・最大129と心拍は低めで、負荷62に収められた", "課題：ピッチ167・接地281msは目標値以下。ペースを追わず、腰の真下へ軽く着く意識を優先"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/14", fullDate:"2026-08-14", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
     { date:"8/15", fullDate:"2026-08-15", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     { date:"8/16", fullDate:"2026-08-16", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"", runPoints:["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
@@ -186,6 +186,19 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    {
+      date:       "8/13",
+      type:       "ジョグ",
+      distance:   "6.5km",
+      pace:       "6:57",
+      heartRate:  "120/129",
+      pitch:      "167/174",
+      groundContact: "281ms",
+      aerobic:    2.7,
+      anaerobic:  0,
+      load:       62,
+      memo:       "完全休養日明けの朝ジョグ。淡々と走ったつもりだったが、ピッチと接地時間は目標値以下。心拍は低め。上下動比9.5%、平均上下動8.2cm。"
+    },
     {
       date:       "8/11",
       type:       "テンポ走",
