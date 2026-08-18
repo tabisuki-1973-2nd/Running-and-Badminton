@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-16",
+  lastUpdated: "2026-08-18",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -125,7 +125,7 @@ window.trainingData = {
     { date:"8/16", fullDate:"2026-08-16", day:"日", done:true, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"ロングジョグ13.5km完了　平均6:54　心拍124/144　ピッチ169　接地277ms　負荷116", runPoints:["実施：序盤は重さがあったが、5km過ぎの給水と休憩後に動きが戻り13.5kmまで継続", "補給：5km過ぎと10km過ぎで給水・休憩。暑い日のロングで補給を2回入れた判断が有効", "評価：平均心拍124・有酸素3.4・負荷116で、13.5kmを有酸素域でまとめられた", "課題：平均ピッチ169はほぼ目標値。疲れた後半ほど歩幅を伸ばさず、足を素早く戻す"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
     // ── 8/17(月) 〜 8/23(日) ──
     { date:"8/17", fullDate:"2026-08-17", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
-    { date:"8/18", fullDate:"2026-08-18", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
+    { date:"8/18", fullDate:"2026-08-18", day:"火", done:true, menu:"朝ジョグ5km＋🏸 バドミントン", target:"リカバリー優先・夜バドは準備を丁寧に", actual:"朝リカバリージョグ5km＋バドミントン1時間7分", runPoints:["心拍を抑え、疲労を残さない", "ピッチや接地時間は無理に追わない"], badmintonPoints:["ラケットを胸の前に置く", "低い姿勢でレシーブ準備", "慌てた時ほど力を抜く"], training: standardStrengthTraining },
     { date:"8/19", fullDate:"2026-08-19", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
     { date:"8/20", fullDate:"2026-08-20", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/21", fullDate:"2026-08-21", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
@@ -186,6 +186,7 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    { date:"8/18", type:"リカバリー", distance:"5km", pace:"6:54", heartRate:"113/126", pitch:"167/181", groundContact:"280ms", aerobic:2.4, anaerobic:0, load:46, memo:"日曜ロング後の疲労が少し残る中で朝ジョグ5km。心拍は抑えられたが、ピッチ167・接地280msは緩め。無理に上げず、回復優先で実施。上下動比9.4%、平均上下動8.1cm。" },
     { date:"8/16", type:"ロングジョグ", distance:"13.5km", pace:"6:54", heartRate:"124/144", pitch:"169/184", groundContact:"277ms", aerobic:3.4, anaerobic:0.3, load:116, memo:"序盤は体が重く、途中で切り上げも考えたが、5km過ぎの給水と休憩後に動きが戻った。10km過ぎでも給水と休憩を入れ、13.5km走って0.5km歩行。ピッチ169はほぼ目標値だが、ばらつきはあり。上下動比9.4%、平均上下動8.0cm。" },
     { date:"8/15", type:"ジョグ", distance:"7.5km", pace:"6:56", heartRate:"124/136", pitch:"170/178", groundContact:"276ms", aerobic:3.0, anaerobic:0, load:73, memo:"10kmも視野に入れて開始したが、7.5kmで終了後に0.5km歩行。暑い中でもペースと心拍は安定。ピッチ170・接地276msはまずまず。6km手前で給水。上下動比9.4%、平均上下動7.9cm。" },
     { date:"8/14", type:"リカバリー", distance:"3km", pace:"6:56", heartRate:"124/134", pitch:"175/181", groundContact:"270ms", aerobic:2.3, anaerobic:0, load:43, memo:"前日の朝ジョグとバドミントンの疲労があり、3kmだけ実施。ピッチと接地時間が下がらないよう意識し、ピッチ175・接地270msにまとめた。朝から暑く、短距離の割に心拍は高め。上下動比9.3%、平均上下動7.6cm。" },
@@ -1240,6 +1241,15 @@ window.trainingData = {
   // バドミントンログ（新しい順）
   // ─────────────────────────────────────────
   badmintonLog: [
+    {
+      date:      "8/18",
+      duration:  "1時間7分",
+      heartRate: "105/148",
+      aerobic:   2.1,
+      anaerobic: 2.1,
+      load:      62,
+      memo:      "サーブとレシーブは前回に続いてまずまず。準備ができていない時はミスや甘い返球になり、痛打を受けた。力みは少し減ったが、残るとミスになる。使用ラケット：黄。"
+    },
     {
       date:      "8/13",
       duration:  "61分",
