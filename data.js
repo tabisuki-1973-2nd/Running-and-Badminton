@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-18",
+  lastUpdated: "2026-08-19",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -126,7 +126,7 @@ window.trainingData = {
     // ── 8/17(月) 〜 8/23(日) ──
     { date:"8/17", fullDate:"2026-08-17", day:"月", done:false, menu:"休養 or 回復ジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["日曜ロング後の回復を優先"], training: standardStrengthTraining },
     { date:"8/18", fullDate:"2026-08-18", day:"火", done:true, menu:"朝ジョグ5km＋🏸 バドミントン", target:"リカバリー優先・夜バドは準備を丁寧に", actual:"朝リカバリージョグ5km＋バドミントン1時間7分", runPoints:["心拍を抑え、疲労を残さない", "ピッチや接地時間は無理に追わない"], badmintonPoints:["ラケットを胸の前に置く", "低い姿勢でレシーブ準備", "慌てた時ほど力を抜く"], training: standardStrengthTraining },
-    { date:"8/19", fullDate:"2026-08-19", day:"水", done:false, menu:"休養 or 軽いジョグ", target:"3〜5km・回復優先", actual:"", runPoints:["火曜バドの疲労を優先"], training: standardStrengthTraining },
+    { date:"8/19", fullDate:"2026-08-19", day:"水", done:true, menu:"完全休養日", target:"回復優先", actual:"完全休養", runPoints:["月曜の朝ジョグと夜バド後の疲労回復を優先"], training: [] },
     { date:"8/20", fullDate:"2026-08-20", day:"木", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["朝は3〜5kmまで。暑さや疲労が強ければランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
     { date:"8/21", fullDate:"2026-08-21", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
     { date:"8/22", fullDate:"2026-08-22", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
