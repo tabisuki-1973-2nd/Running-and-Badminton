@@ -12,7 +12,7 @@ const standardStrengthTraining = [
 
 window.trainingData = {
 
-  lastUpdated: "2026-08-20",
+  lastUpdated: "2026-08-22",
 
   // ─────────────────────────────────────────
   // 旧仕様の互換用。現在の今日タブは weekSchedule から自動表示
@@ -129,8 +129,8 @@ window.trainingData = {
     { date:"8/19", fullDate:"2026-08-19", day:"水", done:true, menu:"完全休養日", target:"回復優先", actual:"完全休養", runPoints:["月曜の朝ジョグと夜バド後の疲労回復を優先"], training: [] },
     { date:"8/20", fullDate:"2026-08-20", day:"木", done:true, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"朝ジョグ5km＋バドミントン1時間16分", runPoints:["実施：朝ジョグ5km。心拍116/124で抑えられた一方、後半はピッチと接地時間が低下", "明日は回復優先。疲労感があれば完全休養"], badmintonPoints:["実施：バドミントン76分。レシーブ準備が遅れて返球できない場面が多め", "返球後の一歩前が出ず、前後・左右への対応が遅れた", "バックハンドは中途半端に返さず、まず面を作ってドライブ気味に返す"], training: standardStrengthTraining },
     { date:"8/21", fullDate:"2026-08-21", day:"金", done:false, menu:"準備ジョグ or 休養", target:"3〜5km・余力残し", actual:"", runPoints:["週末へ向けた調整。距離を稼ぐ日ではない"], training: standardStrengthTraining },
-    { date:"8/22", fullDate:"2026-08-22", day:"土", done:false, menu:"休養 or 短い調整ジョグ", target:"0〜3km・予定と暑さ優先", actual:"", runPoints:["午前予定あり。午後ロングは実施しない"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
-    { date:"8/23", fullDate:"2026-08-23", day:"日", done:false, menu:"ロングジョグ", target:"10〜12km・早朝・給水あり", actual:"", runPoints:["早朝に10〜12kmを目安。5km・10kmで給水", "暑さや違和感で即短縮"], training:["筋トレは休み。腸腰筋ストレッチのみ30秒"] },
+    { date:"8/22", fullDate:"2026-08-22", day:"土", done:true, menu:"朝ラン10km（ペース確認）", target:"6:20〜6:30/km・給水あり", actual:"朝ラン10km完了　6:23/km　心拍135/154　有酸素3.7　無酸素0　負荷136", runPoints:["10kmを平均6:23/kmで走破。5km過ぎに給水と小休止", "ピッチ171、接地271msで目標値を維持。後半も自然にペースアップ", "新潟4時間30分の目標ペース（約6:24/km）の基準確認として収穫あり"], training:["腸腰筋ストレッチ（左右）　30秒"] },
+    { date:"8/23", fullDate:"2026-08-23", day:"日", done:false, menu:"休養 or リカバリージョグ", target:"完全休養優先。走るなら3〜5km・7:00〜7:20/km", actual:"", runPoints:["前日の10kmは暑い中でしっかり負荷が入っているため、脚の回復を優先", "心拍、腰、脚の張りが残る場合は完全休養。無理に距離を足さない"], training:["腸腰筋ストレッチ（左右）　30秒"] },
     // ── 8/24(月) 〜 8/31(月) ──
     { date:"8/24", fullDate:"2026-08-24", day:"月", done:false, menu:"🏸 バドミントン講習会", target:"力を抜く・面を作る・構えでラケットを下げない", actual:"", runPoints:["ランは基本なし。講習会を優先"], badmintonPoints:["握り込みすぎず、インパクトで面を合わせる", "ラケットを胸の前に置き、打った後に構え直す", "ノックでできた動きをゲームでも再現する"], training: standardStrengthTraining },
     { date:"8/25", fullDate:"2026-08-25", day:"火", done:false, menu:"朝ジョグ3〜5km＋🏸 バドミントン", target:"朝ジョグ6:55〜7:20/km・夜バド優先", actual:"", runPoints:["講習会翌日。朝は3kmを基本に、疲労があればランは休養"], badmintonPoints:["ラケットを胸の前に置く", "面を先に作る", "打った後は一歩前へ"], training: standardStrengthTraining },
@@ -186,6 +186,7 @@ window.trainingData = {
   // 計測・インターバルには result を、通常走には distance/pace を記載
   // ─────────────────────────────────────────
   runningLog: [
+    { date:"8/22", type:"ペース走", distance:"10km", pace:"6:23", heartRate:"135/154", pitch:"171/183", groundContact:"271ms", aerobic:3.7, anaerobic:0, load:136, memo:"朝ラン10km。ラップは6:41/kmから6:08/kmへ自然に上昇。5km過ぎに給水・小休止。上下動比9.0%、平均上下動8.2cm。新潟4時間30分の目標ペース（約6:24/km）を10kmで確認できたが、暑熱下の10kmなので現時点では基準確認として扱う。" },
     { date:"8/20", type:"ジョグ", distance:"5km", pace:"6:54", heartRate:"116/124", pitch:"166/176", groundContact:"282ms", aerobic:2.5, anaerobic:0, load:49, memo:"朝ジョグ5km。心拍は116/124で抑えられたが、後半にピッチと接地時間が徐々に低下。上下動比9.5%、平均上下動8.3cm。前日までの疲労を残したまま脚が重くなった可能性があり、翌日は回復優先。" },
     { date:"8/18", type:"リカバリー", distance:"5km", pace:"6:54", heartRate:"113/126", pitch:"167/181", groundContact:"280ms", aerobic:2.4, anaerobic:0, load:46, memo:"日曜ロング後の疲労が少し残る中で朝ジョグ5km。心拍は抑えられたが、ピッチ167・接地280msは緩め。無理に上げず、回復優先で実施。上下動比9.4%、平均上下動8.1cm。" },
     { date:"8/16", type:"ロングジョグ", distance:"13.5km", pace:"6:54", heartRate:"124/144", pitch:"169/184", groundContact:"277ms", aerobic:3.4, anaerobic:0.3, load:116, memo:"序盤は体が重く、途中で切り上げも考えたが、5km過ぎの給水と休憩後に動きが戻った。10km過ぎでも給水と休憩を入れ、13.5km走って0.5km歩行。ピッチ169はほぼ目標値だが、ばらつきはあり。上下動比9.4%、平均上下動8.0cm。" },
